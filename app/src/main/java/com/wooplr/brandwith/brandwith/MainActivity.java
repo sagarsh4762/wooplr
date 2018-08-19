@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
             emptyTextView.setText("No Internet Connection");
+
             webView.setVisibility(View.GONE);
 
         }
