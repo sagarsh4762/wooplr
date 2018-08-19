@@ -21,58 +21,61 @@ public class MainActivity extends AppCompatActivity {
     private TextView emptyTextView;
     private SwipeRefreshLayout swipeRefreshLayout;
     private AdView mAdView;
-        @Override
-        protected void onCreate (Bundle savedInstanceState){
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-            MobileAds.initialize(this,"ca-app-pub-7913641157138911~6217586857" );
-            mAdView = (AdView) findViewById(R.id.adView);
-            AdRequest adRequest = new AdRequest.Builder().build();
-            mAdView.loadAd(adRequest);
-            emptyTextView = (TextView) findViewById(R.id.empty_view);
-            webView = (WebView) findViewById(R.id.webview);
-            ConnectivityManager connMgr = (ConnectivityManager)
 
-                    getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        MobileAds.initialize(this, "ca-app-pub-7913641157138911~6217586857");
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        emptyTextView = (TextView) findViewById(R.id.empty_view);
+        webView = (WebView) findViewById(R.id.webview);
+        ConnectivityManager connMgr = (ConnectivityManager)
 
-
-            // Get details on the currently active default data network
-
-            NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+                getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
 
-            // If there is a network connection, fetch data
+        // Get details on the currently active default data network
 
-            if (networkInfo != null && networkInfo.isConnected()) {
-                webView.loadUrl("http://brandwith.wooplr.com");
-                WebSettings webSettings = webView.getSettings();
-                webSettings.setJavaScriptEnabled(true);
-                webView.setVerticalScrollBarEnabled(true);
-                webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
-                webView.getSettings().setAppCacheEnabled(true);
-                webSettings.setDomStorageEnabled(true);
-                webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
-                webSettings.setUseWideViewPort(true);
-                webSettings.setSavePassword(true);
-                webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-                webSettings.setSaveFormData(true);
-                webSettings.setEnableSmoothTransition(true);
-                webView.setWebViewClient(new WebViewClient());
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
-            } else {
-                emptyTextView.setText("No Internet Connection");
-                webView.setVisibility(View.GONE);
-            }
-        }
 
-        @Override
-        public void onBackPressed () {
-            if (webView.canGoBack()) {
-                webView.goBack();
-            } else {
-                super.onBackPressed();
-            }
+        // If there is a network connection, fetch data
+
+        if (networkInfo != null && networkInfo.isConnected()) {
+            webView.loadUrl("http://brandwith.wooplr.com");
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webView.setVerticalScrollBarEnabled(true);
+            webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+            webView.getSettings().setAppCacheEnabled(true);
+            webSettings.setDomStorageEnabled(true);
+            webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+            webSettings.setUseWideViewPort(true);
+            webSettings.setSavePassword(true);
+            webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+            webSettings.setSaveFormData(true);
+            webSettings.setEnableSmoothTransition(true);
+            webView.setWebViewClient(new WebViewClient());
+        } else {
+
+            emptyTextView.setText("No Internet Connection");
+
+            webView.setVisibility(View.GONE);
 
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+}
+
 
