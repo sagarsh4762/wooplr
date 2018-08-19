@@ -59,10 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 webSettings.setEnableSmoothTransition(true);
                 webView.setWebViewClient(new WebViewClient());
 
-            } else {
-                emptyTextView.setText("No Internet Connection");
-                webView.setVisibility(View.GONE);
-
             }
         }
 
