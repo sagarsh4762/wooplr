@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "27541344671",
+    "firebase_url": "https://brandwith-49fa2.firebaseio.com",
+    "project_id": "brandwith-49fa2",
+    "storage_bucket": "brandwith-49fa2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27541344671:android:b7d2504cdc99d6a3",
+        "android_client_info": {
+          "package_name": "com.wooplr.brandwith.brandwith"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27541344671-dgq6ig2adh7pqnepf1mnd2kavjjcrfpn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wooplr.brandwith.brandwith",
+            "certificate_hash": "2f0edb0f373ba20eb3172d2dd096659d2b506423"
+          }
+        },
+        {
+          "client_id": "27541344671-4k2rluku823p4rr8o5d3ssss51230gp8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wooplr.brandwith.brandwith",
+            "certificate_hash": "c3813c4da6a84fd31c535975e246da3ec2144440"
+          }
+        },
+        {
+          "client_id": "27541344671-65vi0634uacao00pj1k2p811dcpvlje4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNLZP0eUZVUPpFGZDBs7WYNTSTvGperwc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27541344671-65vi0634uacao00pj1k2p811dcpvlje4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      },
+      "admob_app_id": "ca-app-pub-7913641157138911~6217586857"
+    }
+  ],
+  "configuration_version": "1"
+}
