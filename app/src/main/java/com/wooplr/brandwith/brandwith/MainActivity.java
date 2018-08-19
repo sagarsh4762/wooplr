@@ -62,20 +62,11 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
             emptyTextView.setText("No Internet Connection");
-
             webView.setVisibility(View.GONE);
 
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        if (webView.canGoBack()) {
-            webView.goBack();
-        } else {
-            super.onBackPressed();
-        }
-    }
 }
 
 
